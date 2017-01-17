@@ -18,7 +18,6 @@ public class GameScene extends AppCompatActivity {
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.activity_game_scene);
         gameView = new GameView(this);
         layout.addView(gameView);
-        Log.w("test", "MyMath  " + MyMath.add(1,2));
     }
 
     // More SimpleGameEngine methods will go here

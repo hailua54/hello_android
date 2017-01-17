@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.view.View;
 
+import com.example.MyMath;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -15,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Example of a call to a native
         TextView tv = (TextView) findViewById(R.id.sample_text);
-        tv.setText(customMethodJNI());
+        tv.setText(customMethodJNI() + " Math " + MyMath.add(1,2));
     }
 
     /**

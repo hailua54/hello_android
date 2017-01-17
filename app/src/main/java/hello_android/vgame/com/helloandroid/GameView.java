@@ -111,7 +111,7 @@ class GameView extends SurfaceView implements Runnable {
             {
                 lastUpdateTime = System.currentTimeMillis();
                 if (frameCount < 500) fps = frameCount;
-                Log.w("hello_android", "fps  " + frameCount);
+                //Log.w("hello_android", "fps  " + frameCount);
                 frameCount = 0;
             }
         }
