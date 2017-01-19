@@ -1,10 +1,15 @@
 package hello_android.vgame.com.helloandroid;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.view.View;
+import android.widget.VideoView;
 
 import com.example.MyMath;
 
@@ -18,6 +23,29 @@ public class MainActivity extends AppCompatActivity {
         // Example of a call to a native
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(customMethodJNI() + " Math " + MyMath.add(1,2));
+
+        //Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.sample_360_240_5mb);
+        final VideoView videoView = (VideoView)
+                findViewById(R.id.videoView);
+
+        //videoView.setVideoPath("http://192.168.142.48:8080/sample.mp4");
+        //videoView.setVideoPath("http://192.168.142.48:8080/sample_5.mp4");
+        //videoView.setVideoPath("rtsp://192.168.142.48:1935/vod/sample.mp4");
+        //videoView.setVideoPath("rtsp://cdn01-mstream.w88livestream.com/etable1m/live_1");
+        videoView.setVideoPath("rtsp://cdn01-mstream.w88livestream.com/etable4m/live_1");
+
+        MediaController mediaController = new MediaController(this);
+        mediaController.setAnchorView(videoView);
+        videoView.setMediaController(mediaController);
+
+        videoView.setOnPreparedListener(new
+                                                MediaPlayer.OnPreparedListener()  {
+                                                    @Override
+                                                    public void onPrepared(MediaPlayer mp) {
+                                                        Log.w("", "Duration = " + videoView.getDuration());
+                                                    }
+                                                });
+        videoView.start();
     }
 
     /**
