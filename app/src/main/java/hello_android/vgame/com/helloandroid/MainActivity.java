@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         //videoView.setVideoPath("http://192.168.142.48:8080/sample_5.mp4");
         //videoView.setVideoPath("rtsp://192.168.142.48:1935/vod/sample.mp4");
         //videoView.setVideoPath("rtsp://cdn01-mstream.w88livestream.com/etable1m/live_1");
+        /*
         videoView.setVideoPath("rtsp://cdn01-mstream.w88livestream.com/etable4m/live_1");
 
         MediaController mediaController = new MediaController(this);
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                                                     }
                                                 });
         videoView.start();
+        */
     }
 
     /**

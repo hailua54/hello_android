@@ -199,6 +199,13 @@ class GameView extends SurfaceView implements Runnable {
         return true;
     }
 
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+    {
+        Log.d("GameView", "onMeasure ========== widthMeasureSpec " + widthMeasureSpec + " heightMeasureSpec " + heightMeasureSpec);
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
 }
     // This is the end of our GameView inner class
 
